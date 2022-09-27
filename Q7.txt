@@ -1,0 +1,24 @@
+from PIL import Image
+from numpy import array
+import matplotlib.pyplot as plt
+img = Image.open('./imgs/naruto_fight.jpg')
+img2arr = array(img)
+print(img2arr)
+arr2im = Image.fromarray(img2arr)
+imgplot = plt.imshow(arr2im)
+plt.show()
+from PIL import Image, ImageDraw, ImageFont
+import warnings
+warnings.filterwarnings('ignore')
+im = Image.open('./imgs/naruto_fight.jpg')
+width, height = im.size
+draw = ImageDraw.Draw(im)
+text = "Naruto Uzumaki"
+font = ImageFont.truetype('arial.ttf', 100)
+textwidth, textheight = draw.textsize(text, font)
+margin = 10
+x = width - textwidth - margin
+y = height - textheight - margin
+draw.text((x, y), text, font=font)
+imgplot = plt.imshow(im)
+plt.show()

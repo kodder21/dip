@@ -1,0 +1,14 @@
+import matplotlib.pyplot as plt
+from PIL import Image
+imageObject = Image.open("./imgs/naruto_rasengan.jpg")
+imgplot = plt.imshow(imageObject)
+plt.show()
+hori_flippedImage = imageObject.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
+imgplot = plt.imshow(hori_flippedImage)
+plt.show()
+Vert_flippedImage = imageObject.transpose(Image.Transpose.FLIP_TOP_BOTTOM)
+imgplot = plt.imshow(Vert_flippedImage)
+plt.show()
+degree_flippedImage = imageObject.transpose(Image.Transpose.ROTATE_90)
+imgplot = plt.imshow(degree_flippedImage)
+plt.show()

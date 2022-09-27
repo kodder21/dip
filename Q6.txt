@@ -1,0 +1,17 @@
+from PIL import Image, ImageFilter
+import matplotlib.pyplot as plt
+OriImage = Image.open('./imgs/akatsuki.jpg')
+imgplot = plt.imshow(OriImage)
+plt.show()
+blurImage = OriImage.filter(ImageFilter.BLUR)
+imgplot = plt.imshow(blurImage)
+plt.show()
+from PIL import Image, ImageDraw, ImageFont
+im = Image.open("./imgs/akatsuki.jpg")
+left = 155
+top = 65
+right = 360
+bottom = 270
+im1 = im.crop((left, top, right, bottom))
+imgplot = plt.imshow(im1)
+plt.show()
